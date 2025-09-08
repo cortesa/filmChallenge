@@ -4,12 +4,12 @@ import { About } from "../pages/About"
 import { useEffect, useState } from "react"
 
 export const Router = () => {
-	// const [hydrated, setHydrated] = useState(false)
+	const [hydrated, setHydrated] = useState(false)
 
-	// useEffect(() => { setHydrated(true) }, [])
-	// if (!hydrated) return (
-	// 	<div>Loading...</div>
-	// )
+	useEffect(() => { setHydrated(true) }, [])
+	if (!hydrated) return (
+		<div>Loading...</div>
+	)
 	
 	return (
 		<Routes>
