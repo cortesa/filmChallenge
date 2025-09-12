@@ -1,0 +1,33 @@
+@use '@/globalCss/theme.scss' as *;
+@use '@/globalCss/utils.scss' as utils;
+
+.pill {
+	cursor: default;
+	width: fit-content;
+	height: fit-content;
+	border-radius: 200px;
+	@include utils.glass(currentColor);
+	font-weight: $bold;
+	
+	&--hover {
+		@include utils.glass-active(currentColor);
+	}
+	// Sizes
+	&--s {
+		font-size: 0.75rem;
+		line-height: 1rem;
+		padding: 4px 8px;
+	}
+
+	&--m {
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+		padding: 6px 12px;
+	}
+
+	&--l {
+		font-size: 1rem;
+		line-height: 1.5rem;
+		padding: 8px 16px;
+	}
+}

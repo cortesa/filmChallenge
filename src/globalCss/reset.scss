@@ -1,0 +1,84 @@
+/* Reset base styles */
+/* Comments are in English */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Remove default body styles */
+body {
+	margin: 0;
+	font-size: 100%;
+	font-family: Arial, sans-serif;
+	line-height: 1.5;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Remove default link styling */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Reset list styles */
+ul,
+ol {
+	list-style: none;
+}
+
+/* Reset heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+/* Reset image styles */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Reset form elements */
+button,
+input,
+textarea,
+select {
+	font: inherit;
+	color: inherit;
+	background: none;
+	border: none;
+	outline: none;
+}
+
+/* Remove default quotes */
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+	content: '';
+}
+
+/* Ensure tables collapse borders */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}

@@ -1,0 +1,35 @@
+@use '@/globalCss/theme.scss' as *;
+@use '@/globalCss/utils.scss' as utils; 
+
+.BackButton {
+	@include utils.glass($text-primary);
+	font-size: 2rem;
+	color: utils.add-alpha($text-primary, 0.7);
+	border: 1px solid utils.add-alpha($text-primary, 0.3);
+	border-radius: 999px;
+	padding: 0px 15px;
+	transition: all 0.25s ease-in-out;
+	
+	&:hover {
+		cursor: pointer;
+		@include utils.glass-active($accent-color);
+		color: utils.add-alpha($accent-color, 0.7);
+		animation: wiggle-left 1.5s infinite ease-in-out;
+	}
+}
+
+@keyframes wiggle-left {
+	0% {
+		transform: translateX(0px);
+	}
+	10% {
+		opacity: 1;
+	}
+	60% {
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(-5px);
+		opacity: 0;
+	}
+}
