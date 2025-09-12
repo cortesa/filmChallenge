@@ -11,6 +11,7 @@
     "preview": "cross-env NODE_ENV=production node server"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.87.1",
     "compression": "^1.8.1",
     "express": "^5.1.0",
     "react": "^19.1.1",
@@ -26,6 +27,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react-swc": "^3.10.2",
     "cross-env": "^10.0.0",
+    "sass-embedded": "^1.92.1",
     "typescript": "~5.9.2",
     "vite": "^7.0.6"
   }
