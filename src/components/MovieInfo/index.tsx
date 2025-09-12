@@ -6,6 +6,7 @@ import { TmdbImg } from "@/components/ui/TmdbImg"
 import { Pill } from "@/components/ui/Pill"
 
 import "./MovieInfo.scss"
+import { HeartIcon } from "../Icons/HeartIcon"
 
 type GetStatusColorArgs = { status?: string }
 export function getStatusColor({ status }: GetStatusColorArgs) {
@@ -44,7 +45,7 @@ export function MovieInfo() {
 							🎬 {movie.release_date} | ⏱️ {minutesToHM({ minutes: movie.runtime })}
 						</h3>
 						<h4>
-							⭐ {movie.vote_average?.toFixed(1)} / 10{" "}
+							⭐️ {movie.vote_average?.toFixed(1)} / 10{" "}
 							<span>({movie.vote_count} votos)</span>{"  "}
 							<span>🌍 {movie.original_language?.toUpperCase()}</span>
 						</h4>
@@ -71,8 +72,8 @@ export function MovieInfo() {
 					<div className="save">
 						<Pill
 							size="m"
-							label="★"
-							hoverColor="#FFD95C"/>
+							label={<HeartIcon/>}
+							/>
 					</div>
 				</div>
 			</div>

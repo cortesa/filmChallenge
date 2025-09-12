@@ -8,6 +8,10 @@
 	border-radius: 200px;
 	@include utils.glass(currentColor);
 	font-weight: $bold;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 0px;
 	
 	&--hover {
 		@include utils.glass-active(currentColor);
