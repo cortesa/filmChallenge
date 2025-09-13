@@ -21,7 +21,7 @@ export function Home({}) {
 				<div className='content'>
 					<div className='surface'>
 					{selectedGenres.length === 0 
-						? <div>Selecciona una categoria de la lista</div>
+						? <div className="no-genre">Select a category from the list</div>
 						: selectedGenres.map(gId => (
 									<Suspense>
 										<Carousel  key={gId} gId={gId}/>

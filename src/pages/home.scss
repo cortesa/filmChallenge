@@ -26,6 +26,18 @@
 			min-height: 60px;
 			max-width: 1500px;
 			border-radius: 14px;
+
+			.no-genre {
+				font-size: 1rem;
+				font-weight: $bold;
+				text-align: center;
+				@include utils.for-screen("md") {
+						font-size: 1.1rem;
+				}
+				@include utils.for-screen("lg") {
+						font-size: 1.5rem;
+				}
+			}
 		}
 	}
 
