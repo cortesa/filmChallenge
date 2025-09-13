@@ -51,7 +51,7 @@ export function Carousel({ gId }: CarouselProps) {
 
 
 	return (
-		<div className="carousel-container" aria-label={`Carrusel ${genre?.name ?? ""}`}>
+		<div className="carousel-container" aria-label={`Carousel: ${genre?.name ?? ""}`}>
 			<CarouselHeader genreName={genre?.name} />
 
 				<button
@@ -85,7 +85,7 @@ export function Carousel({ gId }: CarouselProps) {
 								{src ? (
 									<TmdbImg alt={movie.title} path={movie.poster_path} />
 								) : (
-									<div className="slider-fallback" aria-label="Sin imagen">
+									<div className="slider-fallback" aria-label="No image">
 										{movie.title}
 									</div>
 								)}

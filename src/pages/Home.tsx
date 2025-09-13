@@ -14,7 +14,7 @@ export function Home({}) {
 		<Layout title="Film Challenge">
 			<div className="home-container">
 				<div className='side-bar surface'>
-					<Suspense fallback={<p>Cargando Generos...</p>}>
+					<Suspense fallback={<p>Loading genres...</p>}>
 						<GenreList />
 					</Suspense>
 				</div>
