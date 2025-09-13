@@ -3,16 +3,16 @@
 @use "@/globalCss/utils.scss" as utils;
 
 $close: (
-	w: 80px,
-	h: 44px,
-	py: 10px,
-	px: 20px
+  w: 80px,
+  h: 44px,
+  py: 10px,
+  px: 20px
 );
 $open: (
-	w: 310px,
-	h: 400px,
-	py: 10px,
-	px: 150px
+  w: 310px,
+  h: 400px,
+  py: 10px,
+  px: 150px
 );
 
 $open-time: .3s;
@@ -20,99 +20,99 @@ $open-time: .3s;
 
 
 .whish-list {
-	position: relative;
-	width: map.get($close, "w");
-	height: map.get($close, "h");
-	z-index: 99;
+  position: relative;
+  width: map.get($close, "w");
+  height: map.get($close, "h");
+  z-index: 99;
 
-	
-	.surface {
-		@include utils.glass($favorite-color, 0);
-		cursor: pointer;
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		display: flex;
-		justify-content: center;
-		align-items: flex-start;
-		width: map.get($close, "w");
-		height: map.get($close, "h");
-		overflow: hidden;
-		border-radius: 16px;
-		border: 1px solid transparent;
-		padding: map.get($close, "py") map.get($close, "px");
-		transition: all $open-time ease-in-out;
+  
+  .surface {
+    @include utils.glass($favorite-color, 0);
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: map.get($close, "w");
+    height: map.get($close, "h");
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid transparent;
+    padding: map.get($close, "py") map.get($close, "px");
+    transition: all $open-time ease-in-out;
 
-		&:hover {
-				@include utils.glass-active($favorite-color);
-		}
+    &:hover {
+        @include utils.glass-active($favorite-color);
+    }
 
-		.stars {
-			position: absolute;
-			top: map.get($close, "py");
-			left: map.get($close, "px");
-			display: flex;
-			gap: 5px;
-			line-height: 1.6rem;
-			transition: top $open-time ease-in-out;
+    .stars {
+      position: absolute;
+      top: map.get($close, "py");
+      left: map.get($close, "px");
+      display: flex;
+      gap: 5px;
+      line-height: 1.6rem;
+      transition: top $open-time ease-in-out;
 
-			span:first-child {
-				color: $accent-color;
-			}
-		} 
+      span:first-child {
+        color: $accent-color;
+      }
+    } 
 
-		.cross {
-			@include utils.glass($accent-color);
-			padding: 8px 6px;
-			font-size: 0.7rem;
-			line-height: 0.65rem;
-			border-radius: 50%;
-			position: absolute;
-			top: calc(map.get($close, "py") + 2px);
-			right: map.get($close, "px");
-			opacity: 0;
-			transition: opacity $open-time ease-in-out;
-			
-			&:hover {
-				cursor: pointer;
-				@include utils.glass-active($accent-color);
-			}
-		}
-		
-		.list {
+    .cross {
+      @include utils.glass($accent-color);
+      padding: 8px 6px;
+      font-size: 0.7rem;
+      line-height: 0.65rem;
+      border-radius: 50%;
+      position: absolute;
+      top: calc(map.get($close, "py") + 2px);
+      right: map.get($close, "px");
+      opacity: 0;
+      transition: opacity $open-time ease-in-out;
+      
+      &:hover {
+        cursor: pointer;
+        @include utils.glass-active($accent-color);
+      }
+    }
+    
+    .list {
 
-			opacity: 0;
-			margin-top: calc(map.get($close, "w") / 2);
-			height: calc(97% - (map.get($close, "w") / 2));
-			width: 100%;
-			transition: opacity $open-time ease-in-out;
-			overflow-y: auto;
-			// border: 1px solid $favorite-color;
-			box-shadow: 0 0 5px $favorite-color;
-			border-radius: 20px;
-		}
-		
-		&.open {
-			@include utils.glass-active($favorite-color, 1, 4);
-			background-color: utils.add-alpha($background, .7);
-			cursor: default;
-			border: 1px solid $favorite-color;
-			width: map.get($open, "w");
-			height: map.get($open, "h");
-			
-			.stars {
-				top: calc(map.get($close, "py") + 4px);
-			}
+      opacity: 0;
+      margin-top: calc(map.get($close, "w") / 2);
+      height: calc(97% - (map.get($close, "w") / 2));
+      width: 100%;
+      transition: opacity $open-time ease-in-out;
+      overflow-y: auto;
+      // border: 1px solid $favorite-color;
+      box-shadow: 0 0 5px $favorite-color;
+      border-radius: 20px;
+    }
+    
+    &.open {
+      @include utils.glass-active($favorite-color, 1, 4);
+      background-color: utils.add-alpha($background, .7);
+      cursor: default;
+      border: 1px solid $favorite-color;
+      width: map.get($open, "w");
+      height: map.get($open, "h");
+      
+      .stars {
+        top: calc(map.get($close, "py") + 4px);
+      }
 
-			.cross {
-				opacity: 1;
-			}
+      .cross {
+        opacity: 1;
+      }
 
-			.list {
-				opacity: 1;
-			}
-		}
+      .list {
+        opacity: 1;
+      }
+    }
 
 
-	}
+  }
 }

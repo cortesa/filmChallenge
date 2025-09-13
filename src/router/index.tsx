@@ -6,22 +6,22 @@ import { Home } from "@/pages/Home"
 import { Movie } from "@/pages/Movie"
 
 export const Router = () => {
-	const [hydrated, setHydrated] = useState(false)
-	const queryClient = new QueryClient()
+  const [hydrated, setHydrated] = useState(false)
+  const queryClient = new QueryClient()
 
 
-	useEffect(() => { setHydrated(true) }, [])
-	if (!hydrated) return (
-		<div>Loading...</div>
-	)
-	
-	return (
-		<QueryClientProvider client={queryClient}>
-			<Routes>
-				<Route index path="/" element={<Home/>} />
-				<Route path="/movie/:mId" element={<Movie/>} />
-				<Route path="*" element={<div>Not Found</div>} />
-			</Routes>
-		</QueryClientProvider>
-	)
+  useEffect(() => { setHydrated(true) }, [])
+  if (!hydrated) return (
+    <div>Loading...</div>
+  )
+  
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Routes>
+        <Route index path="/" element={<Home/>} />
+        <Route path="/movie/:mId" element={<Movie/>} />
+        <Route path="*" element={<div>Not Found</div>} />
+      </Routes>
+    </QueryClientProvider>
+  )
 }

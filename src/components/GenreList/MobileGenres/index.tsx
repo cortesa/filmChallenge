@@ -14,48 +14,48 @@ import { ArrowIcon, DeselctAllIcon } from "@/components/Icons"
 import { GenreListItem } from "../GenreListItem"
 
 type MobileGenresProps = {
-	data:  Genre[]
+  data:  Genre[]
 }
 
 export function MobileGenres ({data}: MobileGenresProps) {
-	const { selectedGenres, addGenre, resetGenres } = useGenresManager()
+  const { selectedGenres, addGenre, resetGenres } = useGenresManager()
 
-	const [isOpen, setOpen] = useState(false)
+  const [isOpen, setOpen] = useState(false)
 
-	const [ _ref, setRef ] = useOutsideClick(() => setOpen(false))
+  const [ _ref, setRef ] = useOutsideClick(() => setOpen(false))
 
-	const toggleSurface = (e: MouseEvent<HTMLElement>) => {
-		e.stopPropagation()
-		setOpen((prev) => !prev)
-	}
+  const toggleSurface = (e: MouseEvent<HTMLElement>) => {
+    e.stopPropagation()
+    setOpen((prev) => !prev)
+  }
 
-	return (
-		<div 
-			ref={setRef}
-			className="mobile-genres"
-			onClick={toggleSurface}>
-			<div 
-				className={clsx(
-				"surface",
-				isOpen && "open"
-			)}>
-				<p className="cross" onClick={toggleSurface}><ArrowIcon direction="up"/></p>
-				<div className="title">
-					<h3>Genres</h3>
-					<button onClick={resetGenres}>
-						<DeselctAllIcon size={24}/>
-					</button>
-				</div>
-				<ul className="list">
-					{data.map((genre) => (
-						<GenreListItem 
-							key={genre.id}
-							genre={genre}
-							selectedGenres={selectedGenres}
-							addGenre={addGenre}/>
-					))}
-				</ul>
-			</div>
-		</div>
-	)
+  return (
+    <div 
+      ref={setRef}
+      className="mobile-genres"
+      onClick={toggleSurface}>
+      <div 
+        className={clsx(
+        "surface",
+        isOpen && "open"
+      )}>
+        <p className="cross" onClick={toggleSurface}><ArrowIcon direction="up"/></p>
+        <div className="title">
+          <h3>Genres</h3>
+          <button onClick={resetGenres}>
+            <DeselctAllIcon size={24}/>
+          </button>
+        </div>
+        <ul className="list">
+          {data.map((genre) => (
+            <GenreListItem 
+              key={genre.id}
+              genre={genre}
+              selectedGenres={selectedGenres}
+              addGenre={addGenre}/>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
 }

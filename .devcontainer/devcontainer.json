@@ -1,50 +1,50 @@
 {
-	"name": "Node.js & TypeScript",
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
-	"forwardPorts": [5173],
-	"runArgs": [
-		"--name=tower_game",
+  "name": "Node.js & TypeScript",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "forwardPorts": [5173],
+  "runArgs": [
+    "--name=tower_game",
     "--rm"
-	],
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"waderyan.gitblame"
-			],
-			"settings": {
-				"workbench.editor.tabCloseButton": "left",
-				"editor.defaultFormatter": "dbaeumer.vscode-eslint",
-				"editor.codeActionsOnSave": {
-					"source.fixAll.eslint": "always"
-				},
-				"eslint.validate": [
-					"javascript", 
-					"typescriptreact", 
-					"typescript", 
-					"react"
-				],
-				"editor.tabSize": 2,
-				"editor.insertSpaces": false,
-				"editor.formatOnSave": true,
-				"workbench.colorCustomizations": {
-					"titleBar.activeBackground": "#4A1C3A",
-					"titleBar.border": "#3A142D",
-					"titleBar.activeForeground": "#F8BBD0",
-					"titleBar.inactiveBackground": "#4A1C3A",
-					"titleBar.inactiveForeground": "#CE93D8",
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "waderyan.gitblame"
+      ],
+      "settings": {
+        "workbench.editor.tabCloseButton": "left",
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "always"
+        },
+        "eslint.validate": [
+          "javascript", 
+          "typescriptreact", 
+          "typescript", 
+          "react"
+        ],
+        "editor.tabSize": 2,
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "workbench.colorCustomizations": {
+          "titleBar.activeBackground": "#4A1C3A",
+          "titleBar.border": "#3A142D",
+          "titleBar.activeForeground": "#F8BBD0",
+          "titleBar.inactiveBackground": "#4A1C3A",
+          "titleBar.inactiveForeground": "#CE93D8",
 
-					"activityBar.background": "#6A1B4D",
-					"activityBar.foreground": "#EC407A",
-					"activityBar.inactiveForeground": "#F48FB1",
-					"activityBar.activeBorder": "#F06292",
+          "activityBar.background": "#6A1B4D",
+          "activityBar.foreground": "#EC407A",
+          "activityBar.inactiveForeground": "#F48FB1",
+          "activityBar.activeBorder": "#F06292",
 
-					"tab.activeBorderTop": "#F06292",
-					"tab.activeBackground": "#2A0D1E",
-					"tab.inactiveBackground": "#1B0D14",
-					"tab.activeForeground": "#F8BBD0",
-					"tab.inactiveForeground": "#9E9E9E"
-				}
-			}
-		}
-	}
+          "tab.activeBorderTop": "#F06292",
+          "tab.activeBackground": "#2A0D1E",
+          "tab.inactiveBackground": "#1B0D14",
+          "tab.activeForeground": "#F8BBD0",
+          "tab.inactiveForeground": "#9E9E9E"
+        }
+      }
+    }
+  }
 }

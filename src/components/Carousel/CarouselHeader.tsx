@@ -2,15 +2,15 @@
 import "./CarouselHeader.scss"
 
 type CarouselHeaderProps = {
-	genreName?: string
+  genreName?: string
 }
 
 export function CarouselHeader({
-	genreName,
+  genreName,
 }: CarouselHeaderProps) {
-	return (
-		<div className="carousel-header">
-			<h2>{genreName}</h2>
-		</div>
-	)
+  return (
+    <div className="carousel-header">
+      <h2>{genreName}</h2>
+    </div>
+  )
 }

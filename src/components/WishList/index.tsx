@@ -12,38 +12,38 @@ import { WhishListItem } from "./WhishListItem"
 import "./WishList.scss"
 
 export function WhishList () {
-	const {list, count} = useWishList()
+  const {list, count} = useWishList()
 
-	const [isOpen, setOpen] = useState(false)
+  const [isOpen, setOpen] = useState(false)
 
-	const [ _ref, setRef ] = useOutsideClick(() => setOpen(false))
+  const [ _ref, setRef ] = useOutsideClick(() => setOpen(false))
 
-	const toggleSurface = (e: MouseEvent<HTMLElement>) => {
-		e.stopPropagation()
-		setOpen((prev) => !prev)
-	}
+  const toggleSurface = (e: MouseEvent<HTMLElement>) => {
+    e.stopPropagation()
+    setOpen((prev) => !prev)
+  }
 
-	return (
-		<div 
-		ref={setRef}
-		className="whish-list"
-		onClick={toggleSurface}>
-			<div 
-				className={clsx(
-				"surface",
-				isOpen && "open"
-			)}>
-				<p className="cross" onClick={toggleSurface}>❌</p>
-				<p className="stars"><span><HeartIcon size={24}/></span><span>{count}</span></p>
-				<ul className="list">
-					{list.map(id => (
-						<Suspense key={id}>
-							<WhishListItem mId={id}/>
-						</Suspense>
-					))}
-				</ul>
-		
-			</div>
-		</div>
-	)
+  return (
+    <div 
+    ref={setRef}
+    className="whish-list"
+    onClick={toggleSurface}>
+      <div 
+        className={clsx(
+        "surface",
+        isOpen && "open"
+      )}>
+        <p className="cross" onClick={toggleSurface}>❌</p>
+        <p className="stars"><span><HeartIcon size={24}/></span><span>{count}</span></p>
+        <ul className="list">
+          {list.map(id => (
+            <Suspense key={id}>
+              <WhishListItem mId={id}/>
+            </Suspense>
+          ))}
+        </ul>
+    
+      </div>
+    </div>
+  )
 }

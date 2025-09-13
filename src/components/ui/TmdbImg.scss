@@ -2,10 +2,10 @@
 @use "@/globalCss/utils.scss" as utils; 
 
 .tmdb-img {
-	display: block;
-	width: 100%;
-	aspect-ratio: 2 / 3;
-	object-fit: cover;
-	border-radius: inherit;
-	z-index: -1;
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: inherit;
+  z-index: -1;
 }

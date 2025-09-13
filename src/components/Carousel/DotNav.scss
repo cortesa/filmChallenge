@@ -1,27 +1,27 @@
 @use "@/globalCss/theme.scss" as *;
 
 .carousel-dots {
-	display: flex;
-	gap: 8px;
-	justify-content: center;
-	align-items: center;
-	padding: 12px 0;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0;
 
-	.dot {
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		border: 0;
-		background: #888; // inactivo
-		opacity: .7;
-		cursor: pointer;
-		transition: all 0.3s ease-in-out;
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 0;
+    background: #888; // inactivo
+    opacity: .7;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 
-		&.active,
-		&[aria-selected="true"] {
-			background: #fff; // activo
-			opacity: 1;
-			transform: scale(1.3);
-		}
-	}
+    &.active,
+    &[aria-selected="true"] {
+      background: #fff; // activo
+      opacity: 1;
+      transform: scale(1.3);
+    }
+  }
 }

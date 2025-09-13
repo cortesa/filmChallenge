@@ -2,40 +2,40 @@
 @use "@/globalCss/utils.scss" as utils;
 
 .main {
-	width: 100dvw;
-	height: 100dvh;
-	display: flex;
-	flex-direction: column;
-	min-width: 378px;
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  min-width: 378px;
 
-	.header {
-		@include utils.glass();
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		height: $header-height;
-		padding: 10px 35px 10px 20px;
-		z-index: 100;
+  .header {
+    @include utils.glass();
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $header-height;
+    padding: 10px 35px 10px 20px;
+    z-index: 100;
 
-		h1 {
-			font-size: 1.8rem;
-			line-height: 2rem;
-		}
-		
-		@include utils.for-screen("md") {
-			h1 {
-				font-size: $h1-size;
-			}
-		}
-		
-		@include utils.for-screen("lg") {
-			padding: 0px 150px;
-		}
-	}
+    h1 {
+      font-size: 1.8rem;
+      line-height: 2rem;
+    }
+    
+    @include utils.for-screen("md") {
+      h1 {
+        font-size: $h1-size;
+      }
+    }
+    
+    @include utils.for-screen("lg") {
+      padding: 0px 150px;
+    }
+  }
 }
 
 .content {
-	flex: 1 0 auto;
-	display: flex;
-	overflow-y: auto;
+  flex: 1 0 auto;
+  display: flex;
+  overflow-y: auto;
 }
