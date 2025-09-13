@@ -9,7 +9,7 @@ import { GenreListItem } from "./GenreListItem"
 
 import "./GenereList.scss"
 
-export function GenreList({}: {}): JSX.Element {
+export function GenreList(): JSX.Element {
   const { data } = useGenres()
 
   const { selectedGenres, addGenre, resetGenres } = useGenresManager()

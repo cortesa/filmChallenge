@@ -6,7 +6,7 @@ import { Carousel } from "@/components/Carousel"
 
 import "./home.scss"
 
-export function Home({}) {
+export function Home() {
 
   const {selectedGenres} = useGenresManager()
 

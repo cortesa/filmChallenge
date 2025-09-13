@@ -1,7 +1,5 @@
 // Comments are in English
-import { API } from "@/lib/api"
 import { Genre } from "@/lib/api/tmdb"
-import { useSuspenseQuery } from "@tanstack/react-query"
 import { useCallback, useMemo } from "react"
 import { useSearchParams } from "react-router-dom"
 

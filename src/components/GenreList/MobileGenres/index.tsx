@@ -1,11 +1,10 @@
 
-import { MouseEvent, Suspense, useRef, useState } from "react"
+import { MouseEvent, useState } from "react"
 import clsx from "clsx"
 
 
 import { useOutsideClick } from "@/hooks/useOutsideClick"
 
-import { WhishListItem } from "./WhishListItem"
 
 import "./MobileGenres.scss"
 import { Genre } from "@/lib/api/tmdb"
@@ -22,7 +21,7 @@ export function MobileGenres ({data}: MobileGenresProps) {
 
   const [isOpen, setOpen] = useState(false)
 
-  const [ _ref, setRef ] = useOutsideClick(() => setOpen(false))
+  const [ , setRef ] = useOutsideClick(() => setOpen(false))
 
   const toggleSurface = (e: MouseEvent<HTMLElement>) => {
     e.stopPropagation()

@@ -1,5 +1,5 @@
 
-import { MouseEvent, Suspense, useRef, useState } from "react"
+import { MouseEvent, Suspense, useState } from "react"
 import clsx from "clsx"
 
 
@@ -16,7 +16,7 @@ export function WhishList () {
 
   const [isOpen, setOpen] = useState(false)
 
-  const [ _ref, setRef ] = useOutsideClick(() => setOpen(false))
+  const [ , setRef ] = useOutsideClick(() => setOpen(false))
 
   const toggleSurface = (e: MouseEvent<HTMLElement>) => {
     e.stopPropagation()

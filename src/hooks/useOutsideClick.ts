@@ -13,11 +13,11 @@ export function useOutsideClick<T extends HTMLElement>(
 
     const onClick = (event: MouseEvent) => {
       if (ref) {
-        if (ref === event.target || ref.contains(event.target as any)) return
+        if (ref === event.target || ref.contains(event.target as Node)) return
       }
       if (refOverridesRef.current?.length) {
         if (refOverridesRef.current.some(ref => (
-          ref === event.target || ref?.contains(event.target as any)
+          ref === event.target || ref?.contains(event.target as Node)
         ))) return
       }
       onOutsideClick()
