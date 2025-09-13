@@ -87,7 +87,6 @@ $open-time: .3s;
       width: 100%;
       transition: opacity $open-time ease-in-out;
       overflow-y: auto;
-      // border: 1px solid $favorite-color;
       box-shadow: 0 0 5px $favorite-color;
       border-radius: 20px;
     }

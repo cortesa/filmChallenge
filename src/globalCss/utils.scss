@@ -40,8 +40,6 @@
   -webkit-backdrop-filter: blur($blur);
 }
 
-// Generic mobile-first mixin
-// Usage: @include for-screen("lg") { … }
 @mixin for-screen($size) {
   $bp: map.get($breakpoints, $size);
   @if $bp == null {

@@ -1,4 +1,3 @@
-// Libraries imports
 import { FC, ReactNode } from "react"
 
 import { WhishList } from "@/components/WishList"

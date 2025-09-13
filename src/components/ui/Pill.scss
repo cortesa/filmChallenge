@@ -16,7 +16,6 @@
   &--hover {
     @include utils.glass-active(currentColor);
   }
-  // Sizes
   &--s {
     font-size: 0.75rem;
     line-height: 1rem;
