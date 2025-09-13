@@ -14,12 +14,22 @@
 		align-items: center;
 		justify-content: space-between;
 		height: $header-height;
-		padding: 0px 35px 0px 20px;
+		padding: 10px 35px 10px 20px;
 		z-index: 100;
+
+		h1 {
+			font-size: 1.8rem;
+			line-height: 2rem;
+		}
+		
+		@include utils.for-screen("md") {
+			h1 {
+				font-size: $h1-size;
+			}
+		}
 		
 		@include utils.for-screen("lg") {
 			padding: 0px 150px;
-			
 		}
 	}
 }
