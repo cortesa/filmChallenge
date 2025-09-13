@@ -1,8 +1,9 @@
 // Libraries imports
-import { FC, JSX, ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
+
+import { WhishList } from '@/components/WishList'
 
 import './layout.scss'
-// App level imports
 
 type BaseLayoutProps = {
   title: ReactNode
@@ -15,6 +16,7 @@ const Layout: FC<BaseLayoutProps> = ({ title, children  }) => {
       <section className="main">
         <div className="header">
           <h1>{title}</h1>
+          <div><WhishList/></div>
         </div>
         <div className="content">
           {children}

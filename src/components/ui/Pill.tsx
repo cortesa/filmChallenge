@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { ReactElement, useState } from 'react'
 import './Pill.scss'
 
 type PillProps = {
-	label: string
+	label: ReactElement | string
 	size?: "s" | "m" | "l"
 	color?: string
 	hoverColor?: string

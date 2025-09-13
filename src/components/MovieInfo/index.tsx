@@ -1,23 +1,19 @@
 import { useMovieInfo } from "@/lib/hooks/useMovieInfo"
 import { useParams } from "react-router-dom"
 
-import { minutesToHM } from "@/utils"
+import { getStatusColor, minutesToHM } from "@/utils"
 import { TmdbImg } from "@/components/ui/TmdbImg"
 import { Pill } from "@/components/ui/Pill"
 
-import "./MovieInfo.scss"
+import { HeartIcon } from "../Icons/HeartIcon"
+import { useWishList } from "@/state/useWishList"
 
-type GetStatusColorArgs = { status?: string }
-export function getStatusColor({ status }: GetStatusColorArgs) {
-	if (status === "Released") return "#5CFF5C"
-	if (status === "Rumored" || status === "Canceled") return "#FF5C5C"
-	if (status === "Post Production") return "#FFD95C"
-	return "#9AE1FF"
-}
+import "./MovieInfo.scss"
 
 export function MovieInfo() {
 	const { mId } = useParams()
 	const { data: movie } = useMovieInfo({ mId: Number(mId) })
+	const {isIn, toggle} = useWishList()
 
 	if (!movie) return null
 
@@ -44,7 +40,7 @@ export function MovieInfo() {
 							🎬 {movie.release_date} | ⏱️ {minutesToHM({ minutes: movie.runtime })}
 						</h3>
 						<h4>
-							⭐ {movie.vote_average?.toFixed(1)} / 10{" "}
+							⭐️ {movie.vote_average?.toFixed(1)} / 10{" "}
 							<span>({movie.vote_count} votos)</span>{"  "}
 							<span>🌍 {movie.original_language?.toUpperCase()}</span>
 						</h4>
@@ -68,11 +64,11 @@ export function MovieInfo() {
 						</div>
 					</div>
 					<p className="desc">{movie.overview}</p>
-					<div className="save">
+					<div className="save" onClick={() => toggle( mId )}>
 						<Pill
 							size="m"
-							label="★"
-							hoverColor="#FFD95C"/>
+							label={<HeartIcon className={isIn( mId ) ? "red-heart" : ""}/>}
+							/>
 					</div>
 				</div>
 			</div>
