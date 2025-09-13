@@ -1,5 +1,5 @@
 
-import './CarouselHeader.scss'
+import "./CarouselHeader.scss"
 
 type CarouselHeaderProps = {
 	genreName?: string

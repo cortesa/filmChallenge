@@ -1,5 +1,5 @@
-import { Genre } from '@/lib/api/tmdb';
-import './GenreListItem.scss'
+import { Genre } from "@/lib/api/tmdb";
+import "./GenreListItem.scss"
 
 type GenreListItemProps = {
 	genre: Genre

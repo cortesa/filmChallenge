@@ -1,10 +1,11 @@
 import { CONFIG } from "@/config"
 
 
+
 const apiQuery = async (endpoint: string, signal?: AbortSignal) => await fetch(
 	`${CONFIG.TMDB.API_URL}/${endpoint}`, 
 	{ 
-		method: 'GET',
+		method: "GET",
 		headers: CONFIG.TMDB.HEADER,
 		signal 
 	}
@@ -14,13 +15,13 @@ type AuthResponse = {
 	success: boolean
 }
 
-export async function authorization({
+	export async function authorization({
 	signal
 }: {
 	signal?: AbortSignal
 }): Promise<AuthResponse> {
 	const res = await apiQuery("Authorization", signal)
-	if (!res.ok) throw new Error('HTTP error')
+	if (!res.ok) throw new Error("HTTP error")
 	const data = (await res.json()) as AuthResponse
 
 	return data
@@ -31,13 +32,13 @@ export type Genre = {
 	name: string
 }
 
-export async function genersList({
+	export async function genersList({
 	signal
 }: {
 	signal?: AbortSignal
 }): Promise<Genre[]> {
 	const res = await apiQuery("genre/movie/list?language=en", signal)
-	if (!res.ok) throw new Error('HTTP error')
+	if (!res.ok) throw new Error("HTTP error")
 	const data = (await res.json()) as Record<"genres",Genre[]>
 	const genres = data.genres
 
@@ -67,7 +68,7 @@ export type MovieByGenreResponse = {
 	total_results: number
 }
 
-export async function moviesByGid({
+	export async function moviesByGid({
 	gId, 
 	activePage,
 	signal
@@ -77,7 +78,7 @@ export async function moviesByGid({
 	signal?: AbortSignal
 }): Promise<MovieByGenreResponse> {
 	const res = await apiQuery(`discover/movie?include_adult=false&include_video=false&page=${activePage}&sort_by=popularity.desc&with_genres=${gId}`, signal)
-	if (!res.ok) throw new Error('HTTP error')
+	if (!res.ok) throw new Error("HTTP error")
 	const data = await res.json()
 	
 	return data
@@ -133,7 +134,7 @@ export type MovieDetails = {
 	vote_count: number
 }
 
-export async function movieInfo({
+	export async function movieInfo({
 	mId,
 	signal
 }:{
@@ -141,7 +142,7 @@ export async function movieInfo({
 	signal?: AbortSignal
 }): Promise<MovieDetails> {
 	const res = await apiQuery(`movie/${mId}`, signal)
-	if (!res.ok) throw new Error('HTTP error')
+	if (!res.ok) throw new Error("HTTP error")
 	const data = await res.json()
 	
 	return data

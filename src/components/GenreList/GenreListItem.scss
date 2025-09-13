@@ -1,6 +1,6 @@
 /* Comments are in English */
-@use '@/globalCss/theme.scss' as *;
-@use '@/globalCss/utils.scss' as utils;
+@use "@/globalCss/theme.scss" as *;
+@use "@/globalCss/utils.scss" as utils;
 
 .genre-item {
 	border: 1px solid utils.add-alpha($text-primary, 0.2); 

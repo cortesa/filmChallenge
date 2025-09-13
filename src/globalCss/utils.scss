@@ -1,5 +1,5 @@
 @use "sass:map";
-@use './theme.scss' as *;
+@use "./theme.scss" as *;
 
 
 @function add-alpha($color, $alpha) {

@@ -1,5 +1,5 @@
 
-import './DotNav.scss'
+import "./DotNav.scss"
 
 type DotNavProps = {
 	count: number

@@ -1,5 +1,5 @@
-import { ReactElement, useState } from 'react'
-import './Pill.scss'
+import { ReactElement, useState } from "react"
+import "./Pill.scss"
 
 type PillProps = {
 	label: ReactElement | string

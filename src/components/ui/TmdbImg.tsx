@@ -1,10 +1,10 @@
 import { CONFIG } from "@/config"
 
-import './TmdbImg.scss'
+import "./TmdbImg.scss"
 import { MovieDetails } from "@/lib/api/tmdb"
 
 type TmdbImgProps = {
-	path?: MovieDetails['backdrop_path']
+	path?: MovieDetails["backdrop_path"]
 	alt?: string
 }
 export function TmdbImg({path, alt}:TmdbImgProps) {

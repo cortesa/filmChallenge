@@ -1,15 +1,15 @@
 
-import { MouseEvent, Suspense, useRef, useState } from 'react'
-import clsx from 'clsx'
+import { MouseEvent, Suspense, useRef, useState } from "react"
+import clsx from "clsx"
 
 
-import { useWishList } from '@/state/useWishList'
-import { useOutsideClick } from '@/hooks/useOutsideClick'
-import { HeartIcon } from '@/components/Icons/HeartIcon'
+import { useWishList } from "@/state/useWishList"
+import { useOutsideClick } from "@/hooks/useOutsideClick"
+import { HeartIcon } from "@/components/Icons/HeartIcon"
 
-import { WhishListItem } from './WhishListItem'
+import { WhishListItem } from "./WhishListItem"
 
-import './WishList.scss'
+import "./WishList.scss"
 
 export function WhishList () {
 	const {list, count} = useWishList()

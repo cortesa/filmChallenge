@@ -1,6 +1,6 @@
 @use "sass:map";
-@use '@/globalCss/theme.scss' as *;
-@use '@/globalCss/utils.scss' as utils;
+@use "@/globalCss/theme.scss" as *;
+@use "@/globalCss/utils.scss" as utils;
 
 $genres-close: (
 	w: 100%,

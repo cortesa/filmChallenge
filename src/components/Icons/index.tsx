@@ -1,6 +1,6 @@
-export { ArrowIcon } from './ArrowIcon'
-export { DeselctAllIcon } from './DeselctAllIcon'
-export { HeartIcon } from './HeartIcon'
-export { TrashBinIcon } from './TrashBinIcon'
-export { ZoomInIcon } from './ZoomInIcon'
-export { ZoomOutIcon } from './ZoomOutIcon'
+export { ArrowIcon } from "./ArrowIcon"
+export { DeselctAllIcon } from "./DeselctAllIcon"
+export { HeartIcon } from "./HeartIcon"
+export { TrashBinIcon } from "./TrashBinIcon"
+export { ZoomInIcon } from "./ZoomInIcon"
+export { ZoomOutIcon } from "./ZoomOutIcon"

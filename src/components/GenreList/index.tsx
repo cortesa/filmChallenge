@@ -1,13 +1,13 @@
 // Comments in English
-import { JSX } from 'react'
-import { useGenresManager } from '@/state/useGenresManager'
-import { useGenres } from '@/lib/hooks/useGenres'
+import { JSX } from "react"
+import { useGenresManager } from "@/state/useGenresManager"
+import { useGenres } from "@/lib/hooks/useGenres"
 
-import { DeselctAllIcon } from '../Icons'
-import { MobileGenres } from './MobileGenres'
-import { GenreListItem } from './GenreListItem'
+import { DeselctAllIcon } from "../Icons"
+import { MobileGenres } from "./MobileGenres"
+import { GenreListItem } from "./GenreListItem"
 
-import './GenereList.scss'
+import "./GenereList.scss"
 
 export function GenreList({}: {}): JSX.Element {
 	const { data } = useGenres()
@@ -15,7 +15,7 @@ export function GenreList({}: {}): JSX.Element {
 	const { selectedGenres, addGenre, resetGenres } = useGenresManager()
 
 	return (
-		<div className='genere-list'>
+		<div className="genere-list">
 		<MobileGenres data={data}/>
 		<div className="desktop-list">
 			<div className="title">

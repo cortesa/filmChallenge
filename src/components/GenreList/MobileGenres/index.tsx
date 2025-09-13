@@ -1,17 +1,17 @@
 
-import { MouseEvent, Suspense, useRef, useState } from 'react'
-import clsx from 'clsx'
+import { MouseEvent, Suspense, useRef, useState } from "react"
+import clsx from "clsx"
 
 
-import { useOutsideClick } from '@/hooks/useOutsideClick'
+import { useOutsideClick } from "@/hooks/useOutsideClick"
 
-import { WhishListItem } from './WhishListItem'
+import { WhishListItem } from "./WhishListItem"
 
-import './MobileGenres.scss'
-import { Genre } from '@/lib/api/tmdb'
-import { useGenresManager } from '@/state/useGenresManager'
-import { ArrowIcon, DeselctAllIcon } from '@/components/Icons'
-import { GenreListItem } from '../GenreListItem'
+import "./MobileGenres.scss"
+import { Genre } from "@/lib/api/tmdb"
+import { useGenresManager } from "@/state/useGenresManager"
+import { ArrowIcon, DeselctAllIcon } from "@/components/Icons"
+import { GenreListItem } from "../GenreListItem"
 
 type MobileGenresProps = {
 	data:  Genre[]

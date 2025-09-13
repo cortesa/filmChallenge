@@ -1,9 +1,9 @@
 // Libraries imports
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode } from "react"
 
-import { WhishList } from '@/components/WishList'
+import { WhishList } from "@/components/WishList"
 
-import './layout.scss'
+import "./layout.scss"
 
 type BaseLayoutProps = {
   title: ReactNode
