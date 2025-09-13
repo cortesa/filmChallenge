@@ -1,4 +1,5 @@
-/* Comments are in English */
+@use '@/globalCss/theme.scss' as *;
+
 .carousel-dots {
 	display: flex;
 	gap: 8px;
@@ -14,12 +15,13 @@
 		background: #888; // inactivo
 		opacity: .7;
 		cursor: pointer;
+		transition: all 0.3s ease-in-out;
 
 		&.active,
 		&[aria-selected="true"] {
 			background: #fff; // activo
 			opacity: 1;
-			transform: scale(1.1);
+			transform: scale(1.3);
 		}
 	}
 }

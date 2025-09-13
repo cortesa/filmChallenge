@@ -22,14 +22,11 @@ export function Home({}) {
 					<div className='surface'>
 					{selectedGenres.length === 0 
 						? <div>Selecciona una categoria de la lista</div>
-						: <div className="home-content">
-								{selectedGenres.map(gId => (
+						: selectedGenres.map(gId => (
 									<Suspense>
 										<Carousel  key={gId} gId={gId}/>
 									</Suspense>
 								))} 
-							</div>
-					}
 					</div>
 				</div>
 			</div>

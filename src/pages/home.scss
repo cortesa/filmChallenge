@@ -12,7 +12,7 @@
 	padding: 20px 10px;
 	
 	.content {
-		flex: 1 0 auto;
+		flex: 1 1 auto;
 		justify-content: center;
 		align-items: flex-start;
 		gap: 2rem;
@@ -24,6 +24,7 @@
 			min-width: 300px;
 			width: 100%;
 			min-height: 60px;
+			max-width: 1500px;
 			border-radius: 14px;
 		}
 	}
@@ -44,10 +45,6 @@
 		.content {
 			align-items: center;
 			padding: 0px 20px 0px 0px;
-
-			.surface {
-				max-width: fit-content;
-			}
 		}
 
 	}

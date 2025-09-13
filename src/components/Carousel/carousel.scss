@@ -3,7 +3,6 @@
 
 .carousel-container {
 	position: relative;
-	width: 1000px;
 	box-sizing: border-box;
 
 	.carousel-scroll {
@@ -42,7 +41,6 @@
 		display: flex;
 		flex-wrap: nowrap;
 		overflow-x: hidden;
-		// overflow-y: visible;
 		scrollbar-gutter: stable;
 		scroll-snap-type: x mandatory;
   	scroll-behavior: smooth;
