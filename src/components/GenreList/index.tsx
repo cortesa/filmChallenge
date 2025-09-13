@@ -1,4 +1,3 @@
-// Comments in English
 import { JSX } from "react"
 import { useGenresManager } from "@/state/useGenresManager"
 import { useGenres } from "@/lib/hooks/useGenres"

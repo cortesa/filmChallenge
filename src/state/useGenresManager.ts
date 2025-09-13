@@ -1,4 +1,3 @@
-// Comments are in English
 import { Genre } from "@/lib/api/tmdb"
 import { useCallback, useMemo } from "react"
 import { useSearchParams } from "react-router-dom"
@@ -16,7 +15,6 @@ export function useGenresManager() {
     return current.map(gId=> Number(gId))
   }, [searchParams])
 
-  // Named Arguments Pattern: addGenre({ genre })
   const addGenre = useCallback((genre: Genre) => {
     const genreId = genre.id.toString()
     const current = searchParams.getAll(GENRE_PARAM)[0]?.split(SEPARATOR) || []
