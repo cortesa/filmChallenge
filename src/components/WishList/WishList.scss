@@ -27,7 +27,7 @@ $open-time: .3s;
 
 	
 	.surface {
-		@include utils.glass($favorite-color);
+		@include utils.glass($favorite-color, 0);
 		cursor: pointer;
 		position: absolute;
 		top: 0px;
@@ -93,7 +93,8 @@ $open-time: .3s;
 		}
 		
 		&.open {
-			@include utils.glass-active($favorite-color);
+			@include utils.glass-active($favorite-color, 1, 4);
+			background-color: utils.add-alpha($background, .7);
 			cursor: default;
 			border: 1px solid $favorite-color;
 			width: map.get($open, "w");

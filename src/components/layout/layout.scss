@@ -9,11 +9,13 @@
 	min-width: 378px;
 
 	.header {
+		@include utils.glass();
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		height: $header-height;
 		padding: 0px 35px 0px 20px;
+		z-index: 100;
 		
 		@include utils.for-screen("lg") {
 			padding: 0px 150px;
