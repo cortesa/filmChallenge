@@ -9,3 +9,11 @@ export function minutesToHM({ minutes }:{minutes?: number | null}) {
 	if (h > 0) return `${h}h`
 	return `${m}m`
 }
+
+type GetStatusColorArgs = { status?: string }
+export function getStatusColor({ status }: GetStatusColorArgs) {
+	if (status === "Released") return "#5CFF5C"
+	if (status === "Rumored" || status === "Canceled") return "#FF5C5C"
+	if (status === "Post Production") return "#FFD95C"
+	return "#9AE1FF"
+}

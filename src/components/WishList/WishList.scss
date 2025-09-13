@@ -9,7 +9,7 @@ $close: (
 	px: 20px
 );
 $open: (
-	w: 300px,
+	w: 350px,
 	h: 400px,
 	py: 10px,
 	px: 150px
@@ -28,6 +28,7 @@ $open-time: .3s;
 	
 	.surface {
 		@include utils.glass($favorite-color);
+		cursor: pointer;
 		position: absolute;
 		top: 0px;
 		right: 0px;
@@ -42,14 +43,19 @@ $open-time: .3s;
 		padding: map.get($close, "py") map.get($close, "px");
 		transition: all $open-time ease-in-out;
 
+		&:hover {
+				@include utils.glass-active($favorite-color);
+		}
+
 		.stars {
 			position: absolute;
 			top: map.get($close, "py");
 			left: map.get($close, "px");
 			display: flex;
 			gap: 5px;
-
 			line-height: 1.6rem;
+			transition: top $open-time ease-in-out;
+
 			span:first-child {
 				color: $accent-color;
 			}
@@ -59,10 +65,10 @@ $open-time: .3s;
 			@include utils.glass($accent-color);
 			padding: 8px 6px;
 			font-size: 0.7rem;
-			line-height: 0.7rem;
+			line-height: 0.65rem;
 			border-radius: 50%;
 			position: absolute;
-			top: map.get($close, "py");
+			top: calc(map.get($close, "py") + 2px);
 			right: map.get($close, "px");
 			opacity: 0;
 			transition: opacity $open-time ease-in-out;
@@ -77,7 +83,6 @@ $open-time: .3s;
 
 			opacity: 0;
 			margin-top: calc(map.get($close, "w") / 2);
-			padding: 10px;
 			height: calc(97% - (map.get($close, "w") / 2));
 			width: 100%;
 			transition: opacity $open-time ease-in-out;
@@ -89,10 +94,15 @@ $open-time: .3s;
 		
 		&.open {
 			@include utils.glass-active($favorite-color);
+			cursor: default;
 			border: 1px solid $favorite-color;
 			width: map.get($open, "w");
 			height: map.get($open, "h");
 			
+			.stars {
+				top: calc(map.get($close, "py") + 4px);
+			}
+
 			.cross {
 				opacity: 1;
 			}
