@@ -1,0 +1,132 @@
+@use "sass:map";
+@use '@/globalCss/theme.scss' as *;
+@use '@/globalCss/utils.scss' as utils;
+
+$genres-close: (
+	w: 100%,
+	h: 48px,
+	py: 10px,
+	px: 20px
+);
+
+$genres-open: (
+	w: 100%,
+	h: 400px,
+	py: 10px,
+	px: 150px
+);
+
+$open-time: .3s;
+
+
+
+.mobile-genres {
+	position: relative;
+	width: map.get($genres-close, "w");
+	height: map.get($genres-close, "h");
+	z-index: 99;
+
+	
+	.surface {
+		@include utils.glass($text-primary);
+		cursor: pointer;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		width: map.get($genres-close, "w");
+		height: map.get($genres-close, "h");
+		overflow: hidden;
+		border-radius: 16px;
+		border: 1px solid transparent;
+		padding: map.get($genres-close, "py") map.get($genres-close, "px");
+		transition: all $open-time ease-in-out;
+
+		.title {
+			position: absolute;
+			top: map.get($genres-close, "py");
+			left: map.get($genres-close, "px");
+			display: flex;
+			gap: 10px;
+			line-height: 1.6rem;
+			transition: top $open-time ease-in-out;
+
+			button {
+				@include utils.glass-active($accent-color);
+				color: $accent-color;
+				position: absolute;
+				top: 0px;
+				right: -50px;
+				opacity: 0;
+				padding: 4px;
+				border-radius: 50%;
+				transition: opacity $open-time ease-in-out;
+			}
+		} 
+
+		.cross {
+			padding: 2px 0px;
+			font-size: 0.7rem;
+			line-height: 0.65rem;
+			border-radius: 50%;
+			position: absolute;
+			top: calc(map.get($genres-close, "py") + 2px);
+			right: map.get($genres-close, "px");
+			opacity: 1;
+			transition: all $open-time ease-in-out;
+			
+			&:hover {
+				cursor: pointer;
+			}
+		}
+		
+		.list {
+			opacity: 0;
+			margin-top: calc(map.get($genres-close, "h") + 16px);
+			height: calc(92% - (map.get($genres-close, "h")));
+			width: 100%;
+			transition: opacity $open-time ease-in-out;
+			overflow-y: auto;
+			box-shadow: 0 0 5px $text-primary;
+			border-radius: 10px;
+		}
+		
+		&.open {
+			@include utils.glass-active($text-primary, 1, 4);
+			background-color: utils.add-alpha($background, .7);
+			cursor: default;
+			border: 1px solid $text-primary;
+			width: map.get($genres-open, "w");
+			height: map.get($genres-open, "h");
+			
+			.title{
+				top: calc(map.get($genres-close, "py") + 12px);
+				button {
+					opacity: 1;
+				}
+			} 
+				
+
+			.stars {
+				top: calc(map.get($genres-close, "py") + 4px);
+			}
+
+			.cross {
+				transform: rotate(180deg);
+			}
+
+			.list {
+				opacity: 1;
+			}
+		}
+
+
+	}
+
+	@include utils.for-screen("md") {
+		display: none;
+	}
+
+}

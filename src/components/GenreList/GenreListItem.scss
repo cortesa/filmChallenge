@@ -1,0 +1,42 @@
+/* Comments are in English */
+@use '@/globalCss/theme.scss' as *;
+@use '@/globalCss/utils.scss' as utils;
+
+.genre-item {
+	border: 1px solid utils.add-alpha($text-primary, 0.2); 
+	padding: 4px 10px;
+	display: block;
+	cursor: pointer;
+
+	&:hover {
+		background: utils.add-alpha($background, 0.5);
+	}
+
+	&:first-child {
+		border-radius: 10px 10px 0px 0px;
+	}
+
+	&:last-child {
+		border-radius: 0px 0px 10px 10px;
+	}
+
+	input[type="checkbox"] {
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		cursor: pointer;
+		width: 12px;
+		height: 12px;
+		border-radius: 999px;
+		@include utils.glass($text-primary, .8);
+
+		&:checked {
+			@include utils.glass-active($succeed-color);
+			background-color: utils.add-alpha($succeed-color, 0.8);
+		}
+	}
+
+	.genre-name {
+		margin-left: 8px;
+	}
+}

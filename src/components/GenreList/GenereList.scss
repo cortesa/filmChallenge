@@ -2,63 +2,70 @@
 @use '@/globalCss/utils.scss' as utils; 
 
 .genere-list {
- .title {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin-bottom: 20px;
+	.desktop-list{
+		display: none;
+	 .title {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 20px;
 
-		button {
-			cursor: pointer;
-			@include utils.glass($text-primary, 0);
-			height: 100%;
-			aspect-ratio: 1 / 1;
-			padding: 8px;
-			border-radius: 50%;
-			
-			&:hover {
-				@include utils.glass-active($accent-color, 0);
-				color: $accent-color;
-			}
-		}
-	}
-	.list {
-		@include utils.glass($text-primary, 0);
-		background: utils.add-alpha($background, 0.5);
-		border-radius: 18px;
-		padding: 10px 15px;
-		
-		.item {
-			border: 1px solid utils.add-alpha($text-primary, 0.2); 
-			padding: 4px 10px;
-			
-			&:hover {
-				background: utils.add-alpha($background, 0.5);
-			}
-		
-			&:first-child {
-				border-radius: 10px 10px 0px 0px;
-			}
-		
-			&:last-child {
-				border-radius: 0px 0px 10px 10px;
-			}
-		
-			input[type="checkbox"] {
-				appearance: none;
-				-webkit-appearance: none;
-				-moz-appearance: none;
+			button {
 				cursor: pointer;
-				width: 12px;
-				height: 12px;
-				border-radius: 999px;
-				@include utils.glass($text-primary, .8);
-				&:checked {
-					@include utils.glass-active($succeed-color);
-					background-color: utils.add-alpha($succeed-color, 0.8);
+				@include utils.glass($text-primary, 0);
+				height: 100%;
+				aspect-ratio: 1 / 1;
+				padding: 8px;
+				border-radius: 50%;
+
+				&:hover {
+					@include utils.glass-active($accent-color, 0);
+					color: $accent-color;
 				}
 			}
-		
+		}
+		.list {
+			@include utils.glass($text-primary, 0);
+			background: utils.add-alpha($background, 0.5);
+			border-radius: 18px;
+			padding: 10px 15px;
+
+			.item {
+				border: 1px solid utils.add-alpha($text-primary, 0.2); 
+				padding: 4px 10px;
+
+				&:hover {
+					background: utils.add-alpha($background, 0.5);
+				}
+			
+				&:first-child {
+					border-radius: 10px 10px 0px 0px;
+				}
+			
+				&:last-child {
+					border-radius: 0px 0px 10px 10px;
+				}
+			
+				input[type="checkbox"] {
+					appearance: none;
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					cursor: pointer;
+					width: 12px;
+					height: 12px;
+					border-radius: 999px;
+					@include utils.glass($text-primary, .8);
+					&:checked {
+						@include utils.glass-active($succeed-color);
+						background-color: utils.add-alpha($succeed-color, 0.8);
+					}
+				}
+			
+			}
+		}
+
+		@include utils.for-screen("md") {
+			display: block;
 		}
 	}
 }

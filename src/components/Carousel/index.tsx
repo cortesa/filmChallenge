@@ -59,7 +59,7 @@ export function Carousel({ gId }: CarouselProps) {
 					aria-label="Scroll left"
 					disabled={currentIndex === 0}
 					onClick={() => setCurrentIndex(currentIndex - 1)}>
-					<ArrowIcon />
+					<ArrowIcon direction="left"/>
 				</button>
 
 				<button
@@ -67,7 +67,7 @@ export function Carousel({ gId }: CarouselProps) {
 					aria-label="Scroll right"
 					disabled={currentIndex === movies.length - 1}
 					onClick={() => setCurrentIndex(currentIndex + 1)}>
-					<ArrowIcon />
+					<ArrowIcon direction="right"/>
 				</button>
 
 				<div className="slider-track" ref={trackRef} role="list">

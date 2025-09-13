@@ -3,8 +3,11 @@ import { JSX } from 'react'
 import { useGenresManager } from '@/state/useGenresManager'
 import { useGenres } from '@/lib/hooks/useGenres'
 
-import './GenereList.scss'
 import { DeselctAllIcon } from '../Icons'
+import { MobileGenres } from './MobileGenres'
+import { GenreListItem } from './GenreListItem'
+
+import './GenereList.scss'
 
 export function GenreList({}: {}): JSX.Element {
 	const { data } = useGenres()
@@ -12,7 +15,9 @@ export function GenreList({}: {}): JSX.Element {
 	const { selectedGenres, addGenre, resetGenres } = useGenresManager()
 
 	return (
-		<div className="genere-list">
+		<div className='genere-list'>
+		<MobileGenres data={data}/>
+		<div className="desktop-list">
 			<div className="title">
 				<h2>Genres</h2>
 				<button onClick={resetGenres}>
@@ -21,16 +26,14 @@ export function GenreList({}: {}): JSX.Element {
 			</div>
 			<div className="list">
 				{data.map((genre) => (
-					<label className="item" key={genre.id} style={{ display: 'block', margin: '4px 0' }}>
-						<input
-							type="checkbox"
-					 		checked={ selectedGenres.some( gId => gId === genre.id ) }
-							onChange={() => addGenre(genre)}
-						/>
-						<span style={{ marginLeft: '8px' }}>{genre.name}</span>
-					</label>
+					<GenreListItem 
+						key={genre.id}
+						genre={genre}
+						selectedGenres={selectedGenres}
+						addGenre={addGenre}/>
 				))}
 			</div>
+		</div>
 		</div>
 	)
 }
