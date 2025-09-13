@@ -9,7 +9,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "waderyan.gitblame"
+        "waderyan.gitblame",
+        "dbaeumer.vscode-eslint"
       ],
       "settings": {
         "workbench.editor.tabCloseButton": "left",
@@ -18,11 +19,13 @@
           "source.fixAll.eslint": "always"
         },
         "eslint.validate": [
-          "javascript", 
-          "typescriptreact", 
-          "typescript", 
-          "react"
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact"
         ],
+        "eslint.format.enable": true,
+        "eslint.experimental.useFlatConfig": true,
         "editor.tabSize": 2,
         "editor.insertSpaces": false,
         "editor.formatOnSave": true,
