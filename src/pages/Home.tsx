@@ -24,8 +24,8 @@ export function Home({}) {
 						? <div>Selecciona una categoria de la lista</div>
 						: <div className="home-content">
 								{selectedGenres.map(gId => (
-									<Suspense key={gId} fallback={<p>Cargando Peliculas...</p>}>
-										<Carousel  gId={gId}/>
+									<Suspense>
+										<Carousel  key={gId} gId={gId}/>
 									</Suspense>
 								))} 
 							</div>

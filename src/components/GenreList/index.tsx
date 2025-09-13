@@ -3,14 +3,22 @@ import { JSX } from 'react'
 import { useGenresManager } from '@/state/useGenresManager'
 import { useGenres } from '@/lib/hooks/useGenres'
 
+import './GenereList.scss'
+import { DeselctAllIcon } from '../Icons'
+
 export function GenreList({}: {}): JSX.Element {
 	const { data } = useGenres()
 
 	const { selectedGenres, addGenre, resetGenres } = useGenresManager()
 
 	return (
-		<div>
-			<h2>Genres</h2>
+		<div className="genere-list">
+			<div className="title">
+				<h2>Genres</h2>
+				<button onClick={resetGenres}>
+					<DeselctAllIcon size={24}/>
+				</button>
+			</div>
 			<div>
 				<div>
 					{data.map((genre) => (
@@ -25,7 +33,6 @@ export function GenreList({}: {}): JSX.Element {
 					))}
 				</div>
 			</div>
-			<button onClick={resetGenres}>Reset All</button>
 		</div>
 	)
 }

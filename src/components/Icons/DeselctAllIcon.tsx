@@ -4,7 +4,7 @@ export type IconProps = Omit<SVGProps<SVGElement>, "ref"> & {
 	size?: number
 }
 
-export function TrashBin({ size = 20, ...props }: IconProps) {
+export function DeselctAllIcon({ size = 20, ...props }: IconProps) {
 	return (
 		<svg 
 			xmlns="http://www.w3.org/2000/svg"
@@ -18,12 +18,8 @@ export function TrashBin({ size = 20, ...props }: IconProps) {
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			{...props}>
-		  <g >
-		    <path d="M3 6h18"/>
-		    <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
-		    <path d="M6 6l1 14a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-14"/>
-		    <path d="M10 10v8M14 10v8"/>
-		  </g>
+		  <circle cx="12" cy="12" r="9" />
+  		<line x1="8" y1="16" x2="16" y2="8" />
 		</svg>
 	)
 }

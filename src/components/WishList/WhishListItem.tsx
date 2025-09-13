@@ -5,7 +5,7 @@ import { Id, useWishList } from "@/state/useWishList"
 
 import "./WishListItem.scss"
 import { TmdbImg } from "../ui/TmdbImg"
-import { TrashBin } from "../Icons/TrashBin"
+import { TrashBinIcon } from "../Icons"
 import { Pill } from "../ui/Pill"
 import { getStatusColor } from "@/utils"
 
@@ -41,7 +41,7 @@ export function WhishListItem({ mId }: WishListItemProps) {
 					<Pill size="s"  color={statusColor} label={movie.status ?? "Unknown"} />
 				</div>
 			</Link>
-			<TrashBin className="trash" onClick={removeMovie} />
+			<TrashBinIcon className="trash" onClick={removeMovie} />
 		</li>
 	)
 }

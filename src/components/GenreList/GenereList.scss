@@ -1,0 +1,25 @@
+@use '@/globalCss/theme.scss' as *;
+@use '@/globalCss/utils.scss' as utils; 
+
+.genere-list {
+ .title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 20px;
+
+		button {
+			cursor: pointer;
+			@include utils.glass($text-primary, 0);
+			height: 100%;
+			aspect-ratio: 1 / 1;
+			padding: 8px;
+			border-radius: 50%;
+			
+			&:hover {
+				@include utils.glass-active($accent-color, 0);
+				color: $accent-color;
+			}
+		}
+	}
+}

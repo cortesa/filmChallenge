@@ -1,35 +1,62 @@
 @use '@/globalCss/theme.scss' as *;
+@use '@/globalCss/utils.scss' as utils; 
 
 .carousel-container {
+	position: relative;
 	width: 1000px;
 	box-sizing: border-box;
 
-	.carousel-header {
+	.carousel-scroll {
+		cursor: pointer;
+		@include utils.glass($text-primary, 0.05, 0.6, 20px);
+		position: absolute;
+		top: 50%;
+		right: -25px;
+		transform: translateY(-50%);
+		z-index: 2;
 		display: flex;
+		justify-content: center;
 		align-items: center;
-		justify-content: flex-start;
-		gap: .75rem;
+		
+		width: 50px;
+		aspect-ratio: 1 / 1;
+		border-radius: 50%;
+		
+		&:disabled {
+			cursor: not-allowed;
+			opacity: 0.4;
+		}
 
-		.carousel-controls {
-			display: flex;
-			align-items: center;
-			gap: .5rem;
+		&:hover {
+			@include utils.glass-active($text-primary, 0.05, 0.6, 20px);
+			border: 1px solid $text-primary;
 
-			button[disabled] { opacity: .4; cursor: not-allowed; }
+		}
+		
+		&.left {
+			left: -25px;
+			svg {
+				transform: rotate(180deg);
+			}
 		}
 	}
 
 	.slider-track {
 		display: flex;
 		flex-wrap: nowrap;
-		overflow-x: auto;
-		overflow-y: visible;
+		overflow-x: hidden;
+		// overflow-y: visible;
 		scrollbar-gutter: stable;
+		scroll-snap-type: x mandatory;
+  	scroll-behavior: smooth;
+		gap: 1px;
 	}
 
 	.slider-item {
+		scroll-snap-align: start;
 		flex: 0 0 auto;
 		width: 120px; 
+		max-width: 120px; 
 		aspect-ratio: 2 / 3;
 		border-radius: .5rem;
 		transition: all 0.25s ease;
