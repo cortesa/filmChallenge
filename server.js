@@ -1,3 +1,4 @@
+/* eslint-env node */
 import fs from "node:fs/promises"
 import express from "express"
 
