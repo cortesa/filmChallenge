@@ -1,4 +1,3 @@
-
 import "./CarouselHeader.scss"
 
 type CarouselHeaderProps = {

@@ -1,13 +1,15 @@
 import { MouseEvent, useCallback } from "react"
 import { Link, useLocation } from "react-router-dom"
+
 import { useMovieInfo } from "@/lib/hooks/useMovieInfo"
 import { Id, useWishList } from "@/state/useWishList"
+import { getStatusColor } from "@/utils"
 
-import "./WishListItem.scss"
 import { TmdbImg } from "../ui/TmdbImg"
 import { TrashBinIcon } from "../Icons"
 import { Pill } from "../ui/Pill"
-import { getStatusColor } from "@/utils"
+
+import "./WishListItem.scss"
 
 type WishListItemProps = { mId: Id }
 

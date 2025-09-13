@@ -1,14 +1,13 @@
-import { Genre } from "@/lib/api/tmdb"
 import { useCallback, useMemo } from "react"
 import { useSearchParams } from "react-router-dom"
+
+import { Genre } from "@/lib/api/tmdb"
 
 const GENRE_PARAM = "genre"
 const SEPARATOR = ","
 
 export function useGenresManager() {
   const [searchParams, setSearchParams] = useSearchParams()
-
-
 
   const selectedGenres = useMemo(() => {
     const current = searchParams.getAll(GENRE_PARAM)[0]?.split(SEPARATOR) || []
@@ -29,10 +28,8 @@ export function useGenresManager() {
     nextParams.delete(GENRE_PARAM)
     if (next.length > 0) nextParams.append(GENRE_PARAM, next.join(SEPARATOR))
 
-
     setSearchParams(nextParams)
   }, [searchParams, setSearchParams])
-
   
   const resetGenres = useCallback(() => {
     const nextParams = new URLSearchParams(searchParams.toString())

@@ -9,7 +9,6 @@ export const Router = () => {
   const [hydrated, setHydrated] = useState(false)
   const queryClient = new QueryClient()
 
-
   useEffect(() => { setHydrated(true) }, [])
   if (!hydrated) return (
     <div>Loading...</div>

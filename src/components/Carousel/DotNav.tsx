@@ -1,4 +1,3 @@
-
 import "./DotNav.scss"
 
 type DotNavProps = {

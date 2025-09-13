@@ -10,7 +10,8 @@
     "vscode": {
       "extensions": [
         "waderyan.gitblame",
-        "dbaeumer.vscode-eslint"
+        "dbaeumer.vscode-eslint",
+        "openai.chatgpt"
       ],
       "settings": {
         "workbench.editor.tabCloseButton": "left",

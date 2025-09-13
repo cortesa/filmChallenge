@@ -1,4 +1,6 @@
+// import type not matched
 import { Genre } from "@/lib/api/tmdb";
+
 import "./GenreListItem.scss"
 
 type GenreListItemProps = {

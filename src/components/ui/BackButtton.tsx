@@ -1,4 +1,3 @@
-
 import "./BackButton.scss"
 
 export function BackButton () {

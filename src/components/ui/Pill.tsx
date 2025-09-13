@@ -1,4 +1,5 @@
 import { ReactElement, useState } from "react"
+
 import "./Pill.scss"
 
 type PillProps = {
@@ -23,3 +24,4 @@ export function Pill({ color, label, size = "m", hoverColor }: PillProps) {
     </div>
   )
 }
+

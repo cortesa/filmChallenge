@@ -1,6 +1,5 @@
+// import type not matched
 import { CONFIG } from "@/config"
-
-
 
 const apiQuery = async (endpoint: string, signal?: AbortSignal) => await fetch(
   `${CONFIG.TMDB.API_URL}/${endpoint}`, 
@@ -15,7 +14,7 @@ type AuthResponse = {
   success: boolean
 }
 
-  export async function authorization({
+export async function authorization({
   signal
 }: {
   signal?: AbortSignal
@@ -32,14 +31,14 @@ export type Genre = {
   name: string
 }
 
-  export async function genersList({
+export async function genersList({
   signal
 }: {
   signal?: AbortSignal
 }): Promise<Genre[]> {
   const res = await apiQuery("genre/movie/list?language=en", signal)
   if (!res.ok) throw new Error("HTTP error")
-  const data = (await res.json()) as Record<"genres",Genre[]>
+  const data = (await res.json()) as Record<"genres", Genre[]>
   const genres = data.genres
 
   return genres
@@ -68,7 +67,7 @@ export type MovieByGenreResponse = {
   total_results: number
 }
 
-  export async function moviesByGid({
+export async function moviesByGid({
   gId, 
   activePage,
   signal
@@ -83,7 +82,6 @@ export type MovieByGenreResponse = {
   
   return data
 }
-
 
 export type MovieDetails = {
   adult: boolean
@@ -134,7 +132,7 @@ export type MovieDetails = {
   vote_count: number
 }
 
-  export async function movieInfo({
+export async function movieInfo({
   mId,
   signal
 }:{

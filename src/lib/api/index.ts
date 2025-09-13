@@ -1,3 +1,4 @@
+// import type not matched
 import { authorization, genersList, movieInfo, moviesByGid } from "./tmdb";
 
 export const API = {

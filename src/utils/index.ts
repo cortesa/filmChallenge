@@ -1,4 +1,3 @@
-
 export function minutesToHM({ minutes }:{minutes?: number | null}) {
   if (minutes == null) return `--h --m`
 

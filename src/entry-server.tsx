@@ -2,7 +2,7 @@ import { StrictMode } from "react"
 import { renderToString } from "react-dom/server"
 import { StaticRouter } from "react-router-dom"
 
-import {Router} from "./router"
+import { Router } from "./router"
 
 interface RenderProps {
   path: string

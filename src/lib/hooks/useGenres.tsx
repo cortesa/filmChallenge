@@ -1,4 +1,5 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
+
 import { Genre } from "../api/tmdb";
 import { API } from "../api";
 
