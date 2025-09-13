@@ -25,9 +25,6 @@ export function GenreList({}: {}): JSX.Element {
 					))}
 				</div>
 			</div>
-
-			{/* Debug: show selected */}
-			<pre>Seleccionados: {JSON.stringify(selectedGenres)}</pre>
 			<button onClick={resetGenres}>Reset All</button>
 		</div>
 	)

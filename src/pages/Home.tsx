@@ -1,4 +1,3 @@
-// Comentarios en inglés
 import { Suspense } from 'react'
 import Layout from '../components/layout'
 import { GenreList } from '@/components/GenreList'
@@ -13,20 +12,27 @@ export function Home({}) {
 
 	return (
 		<Layout title="Film Challenge">
-		
-			<Suspense fallback={<p>Cargando Generos...</p>}>
-				<GenreList />
-				{selectedGenres.length === 0 
-					? <div>Selecciona una categoria de la lista</div>
-					: <div className="home-content">
-							{selectedGenres.map(gId => (
-								<Suspense key={gId} fallback={<p>Cargando Peliculas...</p>}>
-									<Carousel  gId={gId}/>
-								</Suspense>
-							))} 
-						</div>
-				}
-			</Suspense>
+			<div className="home-container">
+				<div className='side-bar surface'>
+					<Suspense fallback={<p>Cargando Generos...</p>}>
+						<GenreList />
+					</Suspense>
+				</div>
+				<div className='content'>
+					<div className='surface'>
+					{selectedGenres.length === 0 
+						? <div>Selecciona una categoria de la lista</div>
+						: <div className="home-content">
+								{selectedGenres.map(gId => (
+									<Suspense key={gId} fallback={<p>Cargando Peliculas...</p>}>
+										<Carousel  gId={gId}/>
+									</Suspense>
+								))} 
+							</div>
+					}
+					</div>
+				</div>
+			</div>
 		</Layout>
 	)
 }
