@@ -7,8 +7,10 @@ export default {
         function isStyleImport(node) {
           const v = node.source && node.source.value
           if (typeof v !== "string") return false
+
           return /(\.module\.)?(css|scss|sass|less)(\?.*)?$/i.test(v)
         }
+
         return {
           Program(program) {
             const body = program.body
@@ -20,7 +22,9 @@ export default {
             for (const imp of imports) (isStyleImport(imp) ? style : nonStyle).push(imp)
             if (style.length === 0) return
             const firstStyleIndex = imports.findIndex(n => isStyleImport(n))
-            const lastNonStyleIndex = (() => { let i = -1; for (let k = 0; k < imports.length; k++) if (!isStyleImport(imports[k])) i = k; return i })()
+            const lastNonStyleIndex = (() => { let i = -1; for (let k = 0; k < imports.length; k++) if (!isStyleImport(imports[k])) i = k;
+
+              return i })()
             if (firstStyleIndex === -1) return
             const orderBad = lastNonStyleIndex > -1 && lastNonStyleIndex > firstStyleIndex
             if (orderBad) {
@@ -29,7 +33,8 @@ export default {
               const nonStyleText = nonStyle.map(n => sourceCode.getText(n).trim()).join("\n")
               const styleText = style.map(n => sourceCode.getText(n).trim()).join("\n")
               const rebuilt = (nonStyleText ? nonStyleText + "\n\n" : "") + styleText + "\n"
-              context.report({ node: imports[0], messageId: "arrange", fix(fixer) { return fixer.replaceTextRange([start, end], rebuilt) } })
+              context.report({ node: imports[0], messageId: "arrange", fix(fixer) { return fixer.replaceTextRange([ start, end ], rebuilt) } })
+
               return
             }
             if (nonStyle.length && style.length) {
@@ -38,7 +43,7 @@ export default {
               const between = sourceCode.text.slice(sepStart, sepEnd)
               const normalized = between.replace(/\r\n/g, "\n")
               if (normalized !== "\n\n") {
-                context.report({ node: style[0], messageId: "arrange", fix(fixer) { return fixer.replaceTextRange([sepStart, sepEnd], "\n\n") } })
+                context.report({ node: style[0], messageId: "arrange", fix(fixer) { return fixer.replaceTextRange([ sepStart, sepEnd ], "\n\n") } })
               }
             }
           }
@@ -71,7 +76,7 @@ export default {
                   additionalProperties: true
                 }
               },
-              unmatched: { enum: ["top", "bottom"] },
+              unmatched: { enum: [ "top", "bottom" ] },
               blankLinesBetweenGroups: { type: "integer", minimum: 0 }
             },
             additionalProperties: false
@@ -87,7 +92,8 @@ export default {
         const blankLines = Number.isInteger(option.blankLinesBetweenGroups) ? Math.max(0, option.blankLinesBetweenGroups) : 1
         const toRegexes = (test) => {
           if (!test) return []
-          const arr = Array.isArray(test) ? test : [test]
+          const arr = Array.isArray(test) ? test : [ test ]
+
           return arr.map((t) => new RegExp(t, "i"))
         }
         const compiled = groupsConfig.map((g) => ({
@@ -103,17 +109,21 @@ export default {
             const { tests, type } = compiled[i]
             if (type === "pattern" && tests.length && tests.some((rx) => rx.test(v))) return i
           }
+
           return -1
         }
         const blockText = (list, label, includeLabel) => {
           if (!list.length) return ""
           const txt = list.map((n) => sourceCode.getText(n).trim()).join("\n")
+
           return (includeLabel && label ? `// ${label}\n` : "") + txt
         }
         const joinWithBlankLines = (blocks) => {
           const sep = "\n".repeat(blankLines + 1)
+
           return blocks.filter(Boolean).join(sep) + "\n"
         }
+
         return {
           Program(program) {
             const body = program.body
@@ -180,7 +190,7 @@ export default {
             const current = sourceCode.text.slice(start, end)
             const normalize = (s) => s.replace(/\r\n/g, "\n").replace(/\s+$/gm, "")
             if (normalize(current) !== normalize(rebuilt)) {
-              context.report({ node: imports[0], messageId: "arrange", fix(fixer) { return fixer.replaceTextRange([start, end], rebuilt) } })
+              context.report({ node: imports[0], messageId: "arrange", fix(fixer) { return fixer.replaceTextRange([ start, end ], rebuilt) } })
             }
           }
         }

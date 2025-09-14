@@ -9,7 +9,6 @@ import Layout from "../components/layout"
 import "./home.scss"
 
 export function Home() {
-
   const { selectedGenres } = useGenresManager()
 
   return (

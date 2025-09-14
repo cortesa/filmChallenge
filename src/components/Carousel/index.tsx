@@ -23,7 +23,7 @@ export function Carousel({ gId }: CarouselProps) {
   const genre = genres.find((g) => g.id === gId)
   const { results: movies } = data
 
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [ currentIndex, setCurrentIndex ] = useState(0)
   const trackRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -33,9 +33,9 @@ export function Carousel({ gId }: CarouselProps) {
     const safeIndex = clamp(currentIndex, 0, movies.length - 1)
     if (safeIndex !== currentIndex) {
       setCurrentIndex(safeIndex)
+
       return
     }
-
     const items = track.querySelectorAll<HTMLElement>(".slider-item")
     const target = items[safeIndex]
     if (!target) return
@@ -44,7 +44,7 @@ export function Carousel({ gId }: CarouselProps) {
       left: target.offsetLeft,
       behavior: "smooth",
     })
-  }, [currentIndex, movies.length])
+  }, [ currentIndex, movies.length ])
 
   return (
     <div className="carousel-container" aria-label={`Carousel: ${genre?.name ?? ""}`}>
@@ -71,6 +71,7 @@ export function Carousel({ gId }: CarouselProps) {
           const src = movie?.poster_path
             ? `${CONFIG.TMDB.IMG_URL}${movie.poster_path}`
             : undefined
+
           return (
             <Link
               to={`/movie/${movie.id}`}

@@ -9,6 +9,6 @@ type MoviesByGidProps = {
 }
 
 export const useMoviesByGid = ({ gId, activePage }: MoviesByGidProps) =>  useSuspenseQuery<MovieByGenreResponse>({
-  queryKey: ["genre", gId, activePage],
+  queryKey: [ "genre", gId, activePage ],
   queryFn: ({ signal }) => API.TMDB.MOVIES_BY_GID({ gId, activePage, signal })
 })

@@ -17,7 +17,7 @@ type MobileGenresProps = {
 export function MobileGenres ({ data }: MobileGenresProps) {
   const { selectedGenres, addGenre, resetGenres } = useGenresManager()
 
-  const [isOpen, setOpen] = useState(false)
+  const [ isOpen, setOpen ] = useState(false)
 
   const [ , setRef ] = useOutsideClick(() => setOpen(false))
 

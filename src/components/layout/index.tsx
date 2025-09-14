@@ -24,5 +24,4 @@ const Layout: FC<BaseLayoutProps> = ({ title, children  }) => {
     </div>
   )
 }
-
 export default Layout

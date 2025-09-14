@@ -28,7 +28,11 @@
         "eslint.format.enable": true,
         "eslint.experimental.useFlatConfig": true,
         "editor.tabSize": 2,
-        "editor.insertSpaces": false,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.trimTrailingWhitespace": true,
         "editor.formatOnSave": true,
         "workbench.colorCustomizations": {
           "titleBar.activeBackground": "#4A1C3A",

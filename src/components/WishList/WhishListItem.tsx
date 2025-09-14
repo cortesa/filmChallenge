@@ -23,9 +23,8 @@ export function WhishListItem({ mId }: WishListItemProps) {
       e.stopPropagation()
       toggle(mId)
     },
-    [mId, toggle]
+    [ mId, toggle ]
   )
-
   const isMoviePage = location.pathname.startsWith("/movie/")
   const statusColor = getStatusColor({ status: movie.status })
 

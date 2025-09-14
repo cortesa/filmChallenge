@@ -11,7 +11,6 @@ const transform: Record<string, string | undefined> = {
   down: "rotate(90, 12, 12)",
   right: undefined,
 }
-
 export function ArrowIcon({ size = 20, direction = "left", ...props }: IconProps) {
   return (
     <svg 

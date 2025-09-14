@@ -14,7 +14,7 @@ import { ZoomInIcon, ZoomOutIcon } from "../Icons";
 import "./MovieInfo.scss";
 
 export function MovieInfo() {
-  const [fullScreen, setFullScreen] = useState(false)
+  const [ fullScreen, setFullScreen ] = useState(false)
   const { mId } = useParams()
   const { data: movie } = useMovieInfo({ mId: Number(mId) })
   const { isIn, toggle } = useWishList()
@@ -28,7 +28,7 @@ export function MovieInfo() {
     <div className="movie-info_container">
       <div className={clsx("full-screen", fullScreen ? "show" : "hide")}>
         <div className="full-poster">
-          <ZoomOutIcon className="zoom out" size={25} onClick={()=>setFullScreen(false)}/>
+          <ZoomOutIcon className="zoom out" size={25} onClick={() => setFullScreen(false)}/>
           <TmdbImg path={movie.poster_path} />
         </div>
       </div>
@@ -38,7 +38,7 @@ export function MovieInfo() {
       <div className="detail">
         <div className="surface">
           <div className="poster">
-            <ZoomInIcon className="zoom" size={25} onClick={()=>setFullScreen(true)}/>
+            <ZoomInIcon className="zoom" size={25} onClick={() => setFullScreen(true)}/>
             <TmdbImg path={movie.poster_path} />
           </div>
           {/* <div className="info"> */}
@@ -77,7 +77,7 @@ export function MovieInfo() {
               )}
             </div>
           </div>
-            
+
           {/* </div> */}
           <p className="desc">{movie.overview}</p>
           <div className="save" onClick={() => toggle( mId )}>

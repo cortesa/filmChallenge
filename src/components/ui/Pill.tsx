@@ -10,18 +10,18 @@ type PillProps = {
 }
 
 export function Pill({ color, label, size = "m", hoverColor }: PillProps) {
-  const [isHovering, setHovering] = useState(false)
+  const [ isHovering, setHovering ] = useState(false)
+
   return (
     <div
-      onMouseEnter={()=> setHovering(!!hoverColor)}
-      onMouseLeave={()=> setHovering(false)}
-      className={`pill pill--${size} ${isHovering?"pill--hover": ""}`}
+      onMouseEnter={() => setHovering(!!hoverColor)}
+      onMouseLeave={() => setHovering(false)}
+      className={`pill pill--${size} ${isHovering ? "pill--hover" : ""}`}
       style={{
-        color: isHovering? hoverColor : color,
+        color: isHovering ? hoverColor : color,
       }}
     >
       {label}
     </div>
   )
 }
-

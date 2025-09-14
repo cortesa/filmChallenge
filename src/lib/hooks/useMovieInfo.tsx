@@ -7,6 +7,6 @@ type MovieProps = {
 }
 
 export const useMovieInfo = ({ mId }: MovieProps) =>  useSuspenseQuery({
-  queryKey: ["movie", mId],
+  queryKey: [ "movie", mId ],
   queryFn: ({ signal }) => API.TMDB.MOVIE_INFO({ mId, signal })
 })

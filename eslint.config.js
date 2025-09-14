@@ -9,7 +9,7 @@ import importOrderPlugin from "./eslint-custom-plugins/import-order.js"
 
 export default [
   // Ignore build outputs and dependencies
-  { ignores: ["dist/**", "node_modules/**"] },
+  { ignores: [ "dist/**", "node_modules/**" ] },
 
   // Base JS rules
   js.configs.recommended,
@@ -19,7 +19,7 @@ export default [
 
   // React and hooks rules
   {
-    files: ["**/*.{ts,tsx,js,jsx}"],
+    files: [ "**/*.{ts,tsx,js,jsx}" ],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
@@ -36,17 +36,32 @@ export default [
       "import-order": importOrderPlugin
     },
     rules: {
-      quotes: ["error", "double", { avoidEscape: true, allowTemplateLiterals: true }],
-      "jsx-quotes": ["error", "prefer-double"],
-      "eol-last": ["error", "always"],
-      "no-multiple-empty-lines": ["error", { max: 1, maxBOF: 0, maxEOF: 1 }],
+      quotes: [ "error", "double", { avoidEscape: true, allowTemplateLiterals: true } ],
+      "jsx-quotes": [ "error", "prefer-double" ],
+      "eol-last": [ "error", "always" ],
+      "no-multiple-empty-lines": [ "error", { max: 1, maxBOF: 0, maxEOF: 1 } ],
       "no-mixed-spaces-and-tabs": "error",
-      indent: ["error", 2, { SwitchCase: 1 }],
-      "react/jsx-indent": ["error", 2],
-      "react/jsx-indent-props": ["error", 2],
-      "object-curly-spacing": ["error", "always"],
-      "comma-spacing": ["error", { before: false, after: true }],
-      "import-order/ordered-import-groups": ["error", {
+      "no-tabs": "error",
+      indent: [ "error", 2, { SwitchCase: 1 } ],
+      "react/jsx-indent": [ "error", 2 ],
+      "react/jsx-indent-props": [ "error", 2 ],
+      "object-curly-spacing": [ "error", "always" ],
+      "array-bracket-spacing": [ "error", "always" ],
+      "space-infix-ops": [ "error" ],
+      "arrow-spacing": [ "error", { before: true, after: true } ],
+      "padded-blocks": [ "error", { blocks: "never", classes: "never", switches: "never" } ],
+      "padding-line-between-statements": [
+        "error",
+        { blankLine: "never", prev: "block-like", next: "*" },
+        { blankLine: "never", prev: "function", next: "*" },
+        { blankLine: "never", prev: "class", next: "*" },
+        { blankLine: "never", prev: "multiline-const", next: "*" },
+        { blankLine: "never", prev: "multiline-let", next: "*" },
+        { blankLine: "never", prev: "multiline-var", next: "*" },
+        { blankLine: "always", prev: "*", next: "return" }
+      ],
+      "comma-spacing": [ "error", { before: false, after: true } ],
+      "import-order/ordered-import-groups": [ "error", {
         groups: [
           { unmatched: true, label: "import type not matched" },
           { test: "^(?![./]|@/)" },
@@ -57,7 +72,7 @@ export default [
           { test: "(\\.module\\.)?(css|scss|sass|less)(\\?.*)?$" }
         ],
         blankLinesBetweenGroups: 1
-      }],
+      } ],
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
       "react-hooks/rules-of-hooks": "error",
@@ -67,7 +82,7 @@ export default [
   ,
   // Node globals for server entry
   {
-    files: ["server.js"],
+    files: [ "server.js" ],
     languageOptions: {
       globals: {
         ...globals.node
@@ -77,7 +92,7 @@ export default [
   ,
   // Relax rules for local ESLint plugin sources
   {
-    files: ["eslint-custom-plugins/*.js"],
+    files: [ "eslint-custom-plugins/*.js" ],
     rules: {
       "no-useless-escape": "off"
     }

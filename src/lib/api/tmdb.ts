@@ -9,7 +9,6 @@ const apiQuery = async (endpoint: string, signal?: AbortSignal) => await fetch(
     signal 
   }
 )
-  
 type AuthResponse = {
   success: boolean
 }
@@ -25,7 +24,6 @@ export async function authorization({
 
   return data
 }
-
 export type Genre = {
   id: number,
   name: string
@@ -43,7 +41,6 @@ export async function genersList({
 
   return genres
 }
-
 export type MovieInfo = {
   backdrop_path: string
   genre_ids: number[]
@@ -82,7 +79,6 @@ export async function moviesByGid({
   
   return data
 }
-
 export type MovieDetails = {
   adult: boolean
   backdrop_path: string | null

@@ -6,9 +6,9 @@ export function minutesToHM({ minutes }:{minutes?: number | null}) {
 
   if (h > 0 && m > 0) return `${h}h ${m}m`
   if (h > 0) return `${h}h`
+
   return `${m}m`
 }
-
 type GetStatusColorArgs = { status?: string }
 
 export function getStatusColor({ status }: GetStatusColorArgs): string {
@@ -21,7 +21,6 @@ export function getStatusColor({ status }: GetStatusColorArgs): string {
 
   return map[status ?? ""] ?? "#9AE1FF"
 }
-
 export function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max)
 }

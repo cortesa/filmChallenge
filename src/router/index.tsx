@@ -6,7 +6,7 @@ import { Home } from "@/pages/Home"
 import { Movie } from "@/pages/Movie"
 
 export const Router = () => {
-  const [hydrated, setHydrated] = useState(false)
+  const [ hydrated, setHydrated ] = useState(false)
   const queryClient = new QueryClient()
 
   useEffect(() => { setHydrated(true) }, [])

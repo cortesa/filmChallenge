@@ -16,5 +16,6 @@ export function render({ path }: RenderProps) {
       </StaticRouter>
     </StrictMode>,
   )
+
   return { html }
 }

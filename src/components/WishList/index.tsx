@@ -11,7 +11,7 @@ import "./WishList.scss"
 export function WhishList () {
   const { list, count } = useWishList()
 
-  const [isOpen, setOpen] = useState(false)
+  const [ isOpen, setOpen ] = useState(false)
 
   const [ , setRef ] = useOutsideClick(() => setOpen(false))
 
