@@ -34,6 +34,9 @@
         "files.trimFinalNewlines": true,
         "files.trimTrailingWhitespace": true,
         "editor.formatOnSave": true,
+        "workbench.experimental.sidePanel.enabled": true,
+        "workbench.startupEditor": "none",
+        "window.restoreWindows": "all",
         "workbench.colorCustomizations": {
           "titleBar.activeBackground": "#4A1C3A",
           "titleBar.border": "#3A142D",
