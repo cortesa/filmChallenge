@@ -1,4 +1,4 @@
-Film Challenge — React + SSR (Vite)
+Movie Explorer — React + SSR (Vite)
 
 Overview
 - Goal: browse films by category; view details; wishlist.

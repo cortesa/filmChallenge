@@ -12,7 +12,7 @@ export function Home() {
   const { selectedGenres } = useGenresManager()
 
   return (
-    <Layout title="Film Challenge">
+    <Layout title="Movie Explorer">
       <div className="home-container">
         <div className="side-bar surface">
           <Suspense fallback={<p>Loading genres...</p>}>
