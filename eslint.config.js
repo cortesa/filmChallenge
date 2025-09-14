@@ -55,9 +55,6 @@ export default [
         { blankLine: "never", prev: "block-like", next: "*" },
         { blankLine: "never", prev: "function", next: "*" },
         { blankLine: "never", prev: "class", next: "*" },
-        { blankLine: "never", prev: "multiline-const", next: "*" },
-        { blankLine: "never", prev: "multiline-let", next: "*" },
-        { blankLine: "never", prev: "multiline-var", next: "*" },
         { blankLine: "always", prev: "*", next: "return" }
       ],
       "comma-spacing": [ "error", { before: false, after: true } ],

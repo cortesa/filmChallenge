@@ -5,15 +5,16 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { Home } from "@/pages/Home"
 import { Movie } from "@/pages/Movie"
 
+const queryClient = new QueryClient()
+
 export const Router = () => {
   const [ hydrated, setHydrated ] = useState(false)
-  const queryClient = new QueryClient()
 
   useEffect(() => { setHydrated(true) }, [])
   if (!hydrated) return (
     <div>Loading...</div>
   )
-  
+
   return (
     <QueryClientProvider client={queryClient}>
       <Routes>

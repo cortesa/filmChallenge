@@ -1,4 +1,4 @@
-import { JSX } from "react"
+import { JSX, useEffect } from "react"
 
 import { useGenresManager } from "@/state/useGenresManager"
 import { useGenres } from "@/lib/hooks/useGenres"
@@ -12,7 +12,15 @@ import "./GenereList.scss"
 export function GenreList(): JSX.Element {
   const { data } = useGenres()
 
-  const { selectedGenres, addGenre, resetGenres } = useGenresManager()
+  const { selectedGenres, addGenre, resetGenres, setGenres } = useGenresManager()
+
+  useEffect(() => {
+    if (!data || data.length === 0) return
+    if (selectedGenres.length > 0) return
+
+    const firstThreeIds = data.slice(0, 3).map((g) => g.id)
+    setGenres(firstThreeIds)
+  }, [ data, selectedGenres.length, setGenres ])
 
   return (
     <div className="genere-list">
@@ -26,7 +34,7 @@ export function GenreList(): JSX.Element {
         </div>
         <div className="list">
           {data.map((genre) => (
-            <GenreListItem 
+            <GenreListItem
               key={genre.id}
               genre={genre}
               selectedGenres={selectedGenres}

@@ -21,13 +21,13 @@ export function Home() {
         </div>
         <div className="content">
           <div className="surface">
-            {selectedGenres.length === 0 
+            {selectedGenres.length === 0
               ? <div className="no-genre">Select a category from the list</div>
               : selectedGenres.map(gId => (
                 <Suspense>
                   <Carousel  key={gId} gId={gId}/>
                 </Suspense>
-              ))} 
+              ))}
           </div>
         </div>
       </div>
