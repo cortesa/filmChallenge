@@ -6,7 +6,7 @@ import "./GenreListItem.scss"
 type GenreListItemProps = {
   genre: Genre
   selectedGenres: number[]
-  addGenre: (genre: Genre) => void
+  addGenre: (genre: Genre)=> void
 }
 
 export function GenreListItem({ genre, selectedGenres, addGenre }: GenreListItemProps) {

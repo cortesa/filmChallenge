@@ -1,4 +1,4 @@
-export function minutesToHM({ minutes }:{minutes?: number | null}) {
+export function minutesToHM({ minutes }: {minutes?: number | null}) {
   if (minutes == null) return `--h --m`
 
   const h = Math.floor(minutes / 60)

@@ -4,6 +4,7 @@ import tseslint from "typescript-eslint"
 import react from "eslint-plugin-react"
 import reactHooks from "eslint-plugin-react-hooks"
 import globals from "globals"
+import stylisticTs from "@stylistic/eslint-plugin"
 
 import importOrderPlugin from "./eslint-custom-plugins/import-order.js"
 
@@ -33,7 +34,8 @@ export default [
     plugins: {
       react,
       "react-hooks": reactHooks,
-      "import-order": importOrderPlugin
+      "import-order": importOrderPlugin,
+      "@stylistic/ts": stylisticTs
     },
     rules: {
       quotes: [ "error", "double", { avoidEscape: true, allowTemplateLiterals: true } ],
@@ -58,6 +60,7 @@ export default [
         { blankLine: "always", prev: "*", next: "return" }
       ],
       "comma-spacing": [ "error", { before: false, after: true } ],
+
       "import-order/ordered-import-groups": [ "error", {
         groups: [
           { unmatched: true, label: "import type not matched" },
@@ -70,6 +73,9 @@ export default [
         ],
         blankLinesBetweenGroups: 1
       } ],
+      "@stylistic/ts/type-annotation-spacing": [
+        "error", { before: false, after: true, }
+      ],
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
       "react-hooks/rules-of-hooks": "error",

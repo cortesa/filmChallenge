@@ -10,7 +10,7 @@ type TmdbImgProps = {
   alt?: string
   className?: string
 }
-export function TmdbImg({ path, alt, className }:TmdbImgProps) {
+export function TmdbImg({ path, alt, className }: TmdbImgProps) {
   return path
     ? (
       <img

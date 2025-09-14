@@ -26,11 +26,11 @@ const removeFromWhishListAtom = atom(
 export type UseWishListReturn = {
   list: Id[]
   count: number
-  isIn: (id: Id) => boolean
-  add: (id: Id) => void
-  remove: (id: Id) => void
-  toggle: (id: Id) => void
-  clear: () => void
+  isIn: (id: Id)=> boolean
+  add: (id: Id)=> void
+  remove: (id: Id)=> void
+  toggle: (id: Id)=> void
+  clear: ()=> void
 }
 
 export function useWishList(): UseWishListReturn {

@@ -3,7 +3,7 @@ import "./DotNav.scss"
 type DotNavProps = {
   count: number
   currentIndex: number
-  onSelect: (idx: number) => void
+  onSelect: (idx: number)=> void
 }
 
 export function DotNav({ count, currentIndex, onSelect }: DotNavProps) {

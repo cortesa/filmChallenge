@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 
 export function useOutsideClick<T extends HTMLElement>(
-  onOutsideClick: () => void,
+  onOutsideClick: ()=> void,
   refOverrides?: (HTMLElement | null)[]
 ) {
   const [ ref, setRef ] = useState<T | null>(null)

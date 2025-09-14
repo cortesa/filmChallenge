@@ -68,7 +68,7 @@ export async function moviesByGid({
   gId, 
   activePage,
   signal
-}:{
+}: {
   gId: number,
   activePage: number,
   signal?: AbortSignal
@@ -131,7 +131,7 @@ export type MovieDetails = {
 export async function movieInfo({
   mId,
   signal
-}:{
+}: {
   mId: number, 
   signal?: AbortSignal
 }): Promise<MovieDetails> {
